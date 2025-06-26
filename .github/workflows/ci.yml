@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        service: [user-service, inscription-service, education-service, pilotage-service]
+        service: [user-service, inscription-service, education-service, pilotage-service, cloud-gateway, service-registry]
 
     steps:
       - name: Checkout code
