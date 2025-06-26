@@ -44,8 +44,8 @@ jobs:
           IMAGE_NAME=${{ secrets.DOCKER_USERNAME }}/${{ matrix.service }}
           docker build -t $IMAGE_NAME:latest .
 
-      # - name: Push Docker image for ${{ matrix.service }}
-      #   working-directory: backend/${{ matrix.service }}
-      #   run: |
-      #     IMAGE_NAME=${{ secrets.DOCKER_USERNAME }}/${{ matrix.service }}
-      #     docker push $IMAGE_NAME:latest
+      - name: Push Docker image for ${{ matrix.service }}
+        working-directory: backend/${{ matrix.service }}
+        run: |
+          IMAGE_NAME=${{ secrets.DOCKER_USERNAME }}/${{ matrix.service }}
+          docker push $IMAGE_NAME:latest
